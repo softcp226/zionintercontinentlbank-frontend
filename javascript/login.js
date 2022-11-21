@@ -16,11 +16,14 @@ const fetch_user = async (user_form) => {
 
   // console.log(user_form);
   try {
-    const response = await fetch("/api/user/login", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(user_form),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/user/login",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(user_form),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {

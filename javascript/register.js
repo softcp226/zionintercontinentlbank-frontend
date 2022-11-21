@@ -3,11 +3,14 @@ const fetch_user = async (user_form) => {
   document.querySelector("#btn_error").innerHTML = "";
 
   try {
-    const response = await fetch("/api/user/register", {
-      method: "POST",
-      // headers: { "content-type": "application/json" },
-      body: user_form,
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/user/register",
+      {
+        method: "POST",
+        // headers: { "content-type": "application/json" },
+        body: user_form,
+      },
+    );
     const result = await response.json();
     if (result.error) {
       document.querySelector("#button").innerHTML = "Try again";

@@ -14,11 +14,14 @@ const getParam = () => {
 const change_password = async (user_form) => {
   document.querySelector("#submit").innerHTML = "proccessing...";
   try {
-    const response = await fetch("/api/user/change_password_02", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(user_form),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/user/change_password_02",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(user_form),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {

@@ -3,11 +3,14 @@ const fetch_recover_password = async (user_name) => {
   //   let user = getCookie("user");
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
-    const response = await fetch("/api/user/recover_password", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ user_name }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/user/recover_password",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ user_name }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {

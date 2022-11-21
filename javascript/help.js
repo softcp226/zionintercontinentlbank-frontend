@@ -20,11 +20,14 @@ const token = getCookie("token");
 const submit_message = async (user_form) => {
   document.querySelector("#submit").innerHTML = "proccessing...";
   try {
-    const response = await fetch("/api/customer/support", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(user_form),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/customer/support",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(user_form),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {

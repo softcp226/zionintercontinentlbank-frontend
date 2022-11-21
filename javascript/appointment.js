@@ -16,18 +16,21 @@ const submitForm = async (
   document.querySelector("button").innerHTML = "proccessing...";
   document.querySelector("#errMessage").innerHTML = "";
   try {
-    const response = await fetch("/api/submit/appointment", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        country,
-        message,
-      }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/submit/appointment",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phoneNumber,
+          country,
+          message,
+        }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {
