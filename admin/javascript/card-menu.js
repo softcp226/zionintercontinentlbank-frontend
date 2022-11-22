@@ -20,11 +20,14 @@ const fetch_delete_card_application = async (DelBtn, card_application) => {
   let admin = getCookie("admin");
   DelBtn.innerHTML = "Proccessing...";
   try {
-    const response = await fetch("/api/admin/card_application/delete", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin, card_application }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/card_application/delete",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, admin, card_application }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {
@@ -81,11 +84,14 @@ const setText = (userInfo) => {
   let token = getCookie("admin_token");
   let admin = getCookie("admin");
   try {
-    const response = await fetch("/api/admin/card_application/fetch", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/card_application/fetch",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, admin }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error)

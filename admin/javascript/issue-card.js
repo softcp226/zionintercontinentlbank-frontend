@@ -28,11 +28,14 @@ const issue_card = async (form) => {
   let admin = getCookie("admin");
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
-    const response = await fetch("/api/admin/issue_card", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/issue_card",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(form),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {

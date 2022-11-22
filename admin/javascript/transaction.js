@@ -61,11 +61,14 @@ const setText = (userInfo) => {
   let token = getCookie("admin_token");
   let admin = getCookie("admin");
   try {
-    const response = await fetch("/api/admin/transaction/fetch", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, user: getParam(), admin }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/transaction/fetch",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, user: getParam(), admin }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error)

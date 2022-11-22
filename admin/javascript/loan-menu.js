@@ -20,11 +20,14 @@ const fetch_delete_loan = async (DelBtn, loan) => {
   let admin = getCookie("admin");
   DelBtn.innerHTML = "Proccessing...";
   try {
-    const response = await fetch("/api/admin/delete_loan", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin, loan }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/delete_loan",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, admin, loan }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {
@@ -49,11 +52,14 @@ const fetch_approve_loan = async (APPROVEBTN, user, loan) => {
   let admin = getCookie("admin");
   APPROVEBTN.innerHTML = "Proccessing...";
   try {
-    const response = await fetch("/api/admin/approve_loan", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin, user, loan }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/approve_loan",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, admin, user, loan }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {
@@ -115,11 +121,14 @@ const setText = (userInfo) => {
   let token = getCookie("admin_token");
   let admin = getCookie("admin");
   try {
-    const response = await fetch("/api/admin/loan/fetch", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin }),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/loan/fetch",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token, admin }),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error)

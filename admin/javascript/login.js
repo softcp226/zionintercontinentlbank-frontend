@@ -15,11 +15,14 @@ const fetch_admin = async (admin_form) => {
 
   // console.log(admin_form);
   try {
-    const response = await fetch("/api/admin/login", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(admin_form),
-    });
+    const response = await fetch(
+      "https://zionintercontinentalb-backend.glitch.me/api/admin/login",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(admin_form),
+      },
+    );
     const result = await response.json();
     console.log(result);
     if (result.error) {
