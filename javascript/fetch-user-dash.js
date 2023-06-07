@@ -33,7 +33,7 @@ let getCookie = (cname) => {
     }
   }
   // return "";
-  window.location.href = "/login.html";
+  window.location.href = "/signin.html";
 };
 
 (async () => {
@@ -50,10 +50,10 @@ let getCookie = (cname) => {
     );
     const result = await response.json();
     console.log(result);
-    if (result.error) return window.location.replace("/login.html");
+    if (result.error) return window.location.replace("/signin.html");
     setUser(result.message, result.ip_address);
   } catch (err) {
-    if (result.error) return window.location.replace("/login.html");
+    if (result.error) return window.location.replace("/signin.html");
   }
 })();
 
