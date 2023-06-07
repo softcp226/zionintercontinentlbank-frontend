@@ -12,7 +12,7 @@ const look_for_user = (cname) => {
     }
   }
   // return "";
-  window.location.href = "/login.html";
+  window.location.href = "/signin.html";
 };
 
 let user_is_active = look_for_user("is_active");
@@ -41,5 +41,5 @@ window.location.href = "/inactive.html";
     }
   }
   // return "";
-  window.location.href = "/login.html";
+  window.location.href = "/signin.html";
 })("token");

@@ -11,11 +11,11 @@
     const result = await response.json();
     console.log(result);
     if (result.error) {
-      alert(result.errMessage);
+      console.log(result.errMessage);
     } else {
       console.log(result.message);
     }
   } catch (error) {
-    alert(error.message);
+    console.log(error.message);
   }
 })();
