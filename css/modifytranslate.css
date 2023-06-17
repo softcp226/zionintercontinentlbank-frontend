@@ -24,6 +24,8 @@
 
 .goog-te-gadget .goog-te-combo {
   padding: 10px;
+      background-color: white;
+    color: gray;
 }
 .skiptranslate.goog-te-gadget a {
   display: none;
